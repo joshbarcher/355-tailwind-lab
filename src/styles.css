@@ -1,0 +1,213 @@
+/* Trailhead -- every visual decision on the page, in this file, behind a name
+   somebody invented. Nothing in the JavaScript refers to any of it by name.
+
+   The colours are the ones the finished board uses. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32px 16px;
+  background: #0f172b;
+  color: #e2e8f0;
+}
+
+.column {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.masthead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #314158;
+}
+
+.masthead-title {
+  font-size: 24px;
+  line-height: 1.3333;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.masthead-sub {
+  font-size: 14px;
+  line-height: 1.4286;
+  color: #90a1b9;
+}
+
+.masthead-count {
+  margin-top: 4px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.filter {
+  padding: 6px 16px;
+  border: 1px solid #314158;
+  border-radius: 9999px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4286;
+  color: #cad5e2;
+  text-transform: capitalize;
+  transition: color 150ms, background-color 150ms, border-color 150ms;
+}
+
+.filter:hover {
+  color: #f1f5f9;
+}
+
+.filter:focus-visible {
+  outline: 2px solid #00bcff;
+  outline-offset: 2px;
+}
+
+.filter:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.filter:not(:disabled):hover {
+  border-color: #62748e;
+  background: #1d293d;
+}
+
+.group {
+  margin-top: 32px;
+}
+
+.group-title {
+  font-size: 12px;
+  line-height: 1.3333;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #90a1b9;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.card {
+  border-radius: 12px;
+  border: 1px solid #314158;
+  background: #1d293d;
+  padding: 16px;
+  box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+  transition: background-color 150ms, border-color 150ms;
+}
+
+.card:hover {
+  border-color: #62748e;
+  background: #314158;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.card-park {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.4286;
+  color: #90a1b9;
+}
+
+.card-meta {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.4286;
+  color: #cad5e2;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  line-height: 1.3333;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.badge-open {
+  background: #00d29426;
+  color: #5ee9b5;
+  box-shadow: 0 0 0 1px #00d2944d;
+}
+
+.badge-muddy {
+  background: #fcbb0026;
+  color: #ffd230;
+  box-shadow: 0 0 0 1px #fcbb004d;
+}
+
+.badge-icy {
+  background: #00bcfe26;
+  color: #74d4ff;
+  box-shadow: 0 0 0 1px #00bcfe4d;
+}
+
+@media (min-width: 768px) {
+  .masthead {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .masthead-title {
+    font-size: 36px;
+    line-height: 1.1111;
+  }
+
+  .board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
